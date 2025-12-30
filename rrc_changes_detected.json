@@ -1,0 +1,117 @@
+{
+    "metadata": {
+        "source_file": "cqi_table_3_ue-export.log"
+    },
+    "history": {
+        "cell_barred": [
+            "cellBarredNTN-r17 notBarred"
+        ],
+        "nr_band": [
+            "freqBandIndicatorNR 8"
+        ],
+        "cell_identity": [
+            "cellIdentity '000306001'H"
+        ],
+        "ntn-UlSyncValidityDuration-r17": [
+            "ntn-UlSyncValidityDuration-r17 s60"
+        ],
+        "cellSpecificKoffset-r17": [
+            "cellSpecificKoffset-r17 528"
+        ],
+        "sr-ProhibitTimer-v1700": [
+            "sr-ProhibitTimer-v1700 ms640"
+        ],
+        "timers_constants": [
+            {
+                "t300": "ms2000",
+                "t301": "ms2000",
+                "t310": "ms2000",
+                "n310": "n20",
+                "t311": "ms3000",
+                "n311": "n1",
+                "t319": "ms2000"
+            }
+        ],
+        "ntn-Config-r17": [
+            {
+                "ntn-UlSyncValidityDuration-r17": "s60",
+                "cellSpecificKoffset-r17": 528,
+                "ta-Info-r17": "present",
+                "ta-Common-r17": 61989889,
+                "ta-CommonDrift-r17": -1,
+                "ta-CommonDriftVariant-r17": 0
+            },
+            {
+                "ta-Report-r17": "enabled"
+            },
+            {
+                "ntn-UlSyncValidityDuration-r17": "s60",
+                "cellSpecificKoffset-r17": 528,
+                "ta-Info-r17": "present",
+                "ta-Common-r17": 61989889,
+                "ta-CommonDrift-r17": -1,
+                "ta-CommonDriftVariant-r17": 0
+            },
+            {
+                "ta-Report-r17": "enabled"
+            }
+        ],
+        "cellSelectionInfo": [
+            {
+                "q-RxLevMin": -60,
+                "q-RxLevMinSUL": -50,
+                "q-QualMin": -30
+            }
+        ],
+        "schedulingRequestToAddModList": [
+            {
+                "schedulingRequestId": 0,
+                "sr-TransMax": "n64"
+            }
+        ],
+        "intraFreqCellReselectionInfo": [
+            {
+                "q-RxLevMin": -60,
+                "s-IntraSearchP": 20,
+                "t-ReselectionNR": 2,
+                "smtc": "present",
+                "periodicityAndOffset": "sf20: 0",
+                "duration": "sf5"
+            }
+        ],
+        "ephemerisInfo-r17-positional": [
+            {
+                "positionX-r17": -6859364,
+                "positionY-r17": -31313000,
+                "positionZ-r17": 1258793,
+                "velocityVX-r17": 0,
+                "velocityVY-r17": 0,
+                "velocityVZ-r17": 0
+            }
+        ],
+        "rlc-BearerToAddModList": [
+            {
+                "logicalChannelIdentity": 1,
+                "servedRadioBearer": "srb-Identity: 1",
+                "rlc-Config": "am:",
+                "ul-AM-RLC": "present",
+                "sn-FieldLength": "size12",
+                "t-PollRetransmit": "ms45",
+                "pollPDU": "infinity",
+                "pollByte": "infinity",
+                "maxRetxThreshold": "t32"
+            },
+            {
+                "logicalChannelIdentity": 2,
+                "servedRadioBearer": "srb-Identity: 2",
+                "rlc-Config": "am:",
+                "ul-AM-RLC": "present",
+                "sn-FieldLength": "size12",
+                "t-PollRetransmit": "ms45",
+                "pollPDU": "infinity",
+                "pollByte": "infinity",
+                "maxRetxThreshold": "t32"
+            }
+        ]
+    }
+}
