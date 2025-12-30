@@ -1,0 +1,56 @@
+1. Preparation for Binary Packaging
+Since your code depends on the templates/ folder, we need to tell the binary to "carry" that folder inside it.
+Update your app.py path logic at the top of the file so it can find the templates whether it's running as code or a binary:
+Python
+import sys
+import os
+
+# This handles the internal path when packaged as a binary
+if getattr(sys, 'frozen', False):
+    bundle_dir = sys._MEIPASS
+else:
+    bundle_dir = os.path.dirname(os.path.abspath(__file__))
+
+templates = Jinja2Templates(directory=os.path.join(bundle_dir, "templates"))
+
+
+2. Creating the Linux Binary
+On your Linux machine (or a Linux VM/WSL), run these commands:
+Bash
+# 1. Install PyInstaller
+pip install pyinstaller fastapi uvicorn[standard] python-multipart jinja2
+
+# 2. Build the binary
+# --onefile: Packages everything into 1 file
+# --add-data: Includes the templates folder inside the binary
+pyinstaller --noconfirm --onefile --console \
+    --add-data "templates:templates" \
+    app.py
+
+3. What you get
+After the command finishes, look in the dist/ folder. You will see a file named app.
+This is your software.
+You can move this single file to any similar Linux machine.
+To run it, the user just types: ./app
+
+4. Deploying as a Professional Service (The "Linux Way")
+If you want this to run like real professional software that starts automatically when the Linux server boots, you should create a systemd service.
+Create a file at /etc/systemd/system/rrc-debugger.service:
+Ini, TOML
+[Unit]
+Description=RRC Debugger Software
+After=network.target
+
+[Service]
+User=your-username
+ExecStart=/path/to/your/dist/app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+5. Summary of what you need for Linux:
+The Binary: The dist/app file created by PyInstaller.
+Permissions: You must run chmod +x app on Linux to allow it to execute.
+Port Access: Ensure port 5000 is open on the Linux firewall (ufw).
+Would you like me to provide a "Build Script" (bash script) that automates the whole packaging process for you?
